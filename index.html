@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pradip AI - Smart Earning Assistant</title>
 
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #eef2ff;
+  margin: 0;
+  padding: 15px;
+}
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px #ccc;
+}
+h1 {
+  text-align: center;
+  color: #263b80;
+}
+p {
+  text-align: center;
+  color: #555;
+}
+select, textarea, button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 12px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+textarea {
+  height: 100px;
+}
+button {
+  background: #263b80;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#answer {
+  background: #f1f5ff;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>🤖 Pradip AI</h1>
+
+<p>Smart Earning Assistant</p>
+
+<select id="language">
+<option value="hi">हिंदी</option>
+<option value="mr">मराठी</option>
+</select>
+
+<textarea id="question" placeholder="अपना सवाल यहाँ लिखें..."></textarea>
+
+<button onclick="reply()">सवाल पूछें</button>
+
+<div id="answer">
+आपका स्वागत है! Pradip AI जल्द ही आपकी मदद करेगा।
+</div>
+
+</div>
+
+<script>
+function reply() {
+  let q = document.getElementById("question").value.trim();
+  let lang = document.getElementById("language").value;
+  let answer = document.getElementById("answer");
+
+  if (!q) {
+    answer.innerText = lang === "mr"
+      ? "कृपया तुमचा प्रश्न लिहा."
+      : "कृपया अपना सवाल लिखें।";
+    return;
+  }
+
+  answer.innerText = lang === "mr"
+    ? "धन्यवाद! तुमचा प्रश्न मिळाला. AI सेवा जोडण्याचे काम सुरू आहे."
+    : "धन्यवाद! आपका सवाल मिल गया। AI सेवा जोड़ने का काम जारी है।";
+}
+</script>
+
+</body>
+</html>
